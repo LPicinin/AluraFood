@@ -26,7 +26,7 @@ public class PagamentoService {
         return repository.findAll(paginacao).map(p -> modelMapper.map(p, PagamentoDTO.class));
     }
 
-    public PagamentoDTO obterPorId(UUID id)
+    public PagamentoDTO obterPorId(Long id)
     {
         Pagamento pagamento = repository.findById(id).orElseThrow(EntityNotFoundException::new);
         return modelMapper.map(pagamento, PagamentoDTO.class);
@@ -41,7 +41,7 @@ public class PagamentoService {
         return modelMapper.map(pagamento, PagamentoDTO.class);
     }
 
-    public PagamentoDTO atualizaPagamento(UUID id, PagamentoDTO dto)
+    public PagamentoDTO atualizaPagamento(Long id, PagamentoDTO dto)
     {
         Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
         pagamento.setId(id);
@@ -50,7 +50,7 @@ public class PagamentoService {
         return modelMapper.map(pagamento, PagamentoDTO.class);
     }
 
-    public void excluirPagamento(UUID id)
+    public void excluirPagamento(Long id)
     {
         repository.deleteById(id);
     }

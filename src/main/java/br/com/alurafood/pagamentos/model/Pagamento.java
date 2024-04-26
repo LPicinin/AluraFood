@@ -22,8 +22,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Pagamento {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotNull
     @Positive
@@ -38,8 +38,7 @@ public class Pagamento {
     private String numero;
 
     @NotBlank
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date expiracao;
+    private String expiracao;
 
     @NotBlank
     @Size(min=3, max=3)

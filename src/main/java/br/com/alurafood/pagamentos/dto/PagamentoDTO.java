@@ -11,11 +11,11 @@ import java.util.UUID;
 @Getter
 @Setter
 public class PagamentoDTO {
-    private UUID id;
+    private Long id;
     private BigDecimal valor;
     private String nome;
     private String numero;
-    private Date expiracao;
+    private String expiracao;
     private String codigo;
     private Status status;
     private Long formaDePagamentoId;
