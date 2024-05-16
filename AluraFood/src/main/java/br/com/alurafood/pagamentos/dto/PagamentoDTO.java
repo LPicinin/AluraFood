@@ -1,11 +1,13 @@
 package br.com.alurafood.pagamentos.dto;
 
+import br.com.alurafood.pagamentos.model.ItemDoPedido;
 import br.com.alurafood.pagamentos.model.Status;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -20,4 +22,5 @@ public class PagamentoDTO {
     private Status status;
     private Long formaDePagamentoId;
     private Long pedidoId;
+    private List<ItemDoPedido> itens;
 }
